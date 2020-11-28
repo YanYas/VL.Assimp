@@ -1,0 +1,8 @@
+- The Meshes need a bounding box to use Stride's shadow system.
+- The materials should be able to match the PBR (advanced). I think Texone alludes to this by showing how shininess is exposed.
+- Mesh names could be used to set the inital entity names
+- Stride makes it a little awkward to access a single child from the Assimp entity. The hierarchy with the parent or rootscene is a necessity. Maybe I need to spend more time with the library to understand its behaviour but so far I get an error like 'the child is still connected to a Parent. Detatch from parent'.
+- Its a workflow issue, but how users should access and set properties may depend on their use case. 
+  - Maybe we want standard nodes that behave like the old assimp library (only the entity is an assimp_object_entity), The matrix and the animation can be changed from inputs but the material properies (and maybe the texture) are defined on the 3D software they use and can't be changed.
+  - For advanced nodes perhaps the parameters of the original Assimp model are available as well as the Stride entity properties. If users want to change out materials, get details about the hierachy for, say, armiture info, access different meshes for cases like LOD, and so on, there may need to be another access interface for those settings. Hopefully one that matches the design of VL.Stride's current approach.
+- Need to explore skinning, skeletons and animations in general, but the project opens that door.
